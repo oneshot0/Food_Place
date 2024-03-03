@@ -1,38 +1,48 @@
-* {
+html {
   font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
 }
 
 main {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
 /* First section - Hero */
 
 .hero {
+  position: relative;
+  padding: 0 0 0 4rem;
+  max-height: 40rem;
   display: grid;
-  grid-template-columns: minmax(300px, 2fr) 3fr;
-  grid-auto-rows: 550px;
-  border-bottom: 2px solid rgb(223, 217, 217);
+  grid-template-columns: minmax(30rem, 1fr) 1fr;
+  grid-template-rows: 40rem;
+  gap: 0.5rem;
+  place-items: center;
+  overflow: hidden;
+  background: black;
+  color: white;
 }
 .hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  margin-left: 2rem;
+  width: 90%;
+  max-width: 40rem;
+  object-fit: fill;
 }
 .hero-info {
-  align-self: center;
+  font-size: 2.4rem;
+  z-index: 9;
 }
 .hero-info h1 {
-  color: #333;
-  font-size: 3rem;
-  font-weight: bolder;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
+  font-size: 5rem;
+  font-weight: bold;
 }
 .hero-info p {
-  color: #333;
+  color: white;
   font-size: 1.5rem;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
 }
 .hero-info button {
   border: none;
@@ -103,11 +113,22 @@ main {
 
 @media screen and (max-width: 768px) {
   .hero {
-    grid-template-columns: minmax(300px, 500px);
-    justify-content: center;
+    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    background-image: url("https://i.ibb.co/R0xYKtR/hero.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
   }
   .hero-image {
     display: none;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, black 20%, rgba(0, 0, 0, 0));
   }
   .dishes-grid {
     grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
